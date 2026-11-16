@@ -55,6 +55,7 @@ class LoansTable
                 ->visible(fn (Loan $record) => $record->status === 'dipinjam')
                 ->action(function (Loan $record) {
                     $telat = (int) $record->due_date->diffInDays(now()->startOfDay(), false);
+                    //Variabel menghitung berapa hari keterlambatan pengembalian buku
                     $record->update([
                         'returned_at' => now(),
                         'status' => 'dikembalikan',

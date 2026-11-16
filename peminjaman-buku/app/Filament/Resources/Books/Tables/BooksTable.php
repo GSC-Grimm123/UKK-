@@ -51,6 +51,7 @@ class BooksTable
                     ->action(function (Book $record) {
                         $aktif = Loan::where('user_id', auth()->id())->where('status', 'dipinjam')->count();
                         if ($aktif >= 3) {
+                            //Kondisi membatasi jumlah buku yang boleh dipinjam: satu siswa maksimal 3 buku yang sedang dipinjam sekaligus.
                             Notification::make()->title('Maksimal pinjam 3 buku')->danger()->send();
                             return;
                         }

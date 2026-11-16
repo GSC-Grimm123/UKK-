@@ -15,6 +15,7 @@ class Loan extends Model
         'returned_at' => 'date',
     ];
     public function user(): BelongsTo
+    //Fungsi satu data pinjaman (Loan) dimiliki oleh satu user.
     {
         return $this->belongsTo(User::class);
     }

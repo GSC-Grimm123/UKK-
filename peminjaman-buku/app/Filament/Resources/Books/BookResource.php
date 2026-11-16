@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
+    //variabel
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
